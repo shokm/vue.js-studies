@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <title>Document</title>
+    <title>Web Speech APIを利用した音声文字起こしシステム</title>
 </head>
 <body>
+    <h1>Web Speech APIを利用した音声文字起こしシステム</h1>
+    <p>Chromeのみで動作します。（※iPhone版Chromeは除く）</p>
     <div id="app2">
-        <span v-for="todo in todos">{{ todo.text }}<br></span>
+        <span v-for="history in histories">{{ history.text }}<br></span>
     </div>
     <p id="app">{{ message }}</p>
-    <button type="button" onclick="button_c();">スタート</button>
+    <button type="button" onclick="startButton();">スタート</button>
 
     <script src="./script.js"></script>
 </body>
