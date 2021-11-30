@@ -1,11 +1,11 @@
 // SpeechRecognitionの準備
 SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
 const recognition = new SpeechRecognition();
-// 現在の SpeechRecognition の言語を返して設定します。指定されない場合、これはデフォルトで HTML lang 属性の値になります。どちらも設定されていない場合、ユーザーエージェントの言語設定が使用されます。
+// 現在の SpeechRecognition の言語を返して設定します。
 recognition.lang = 'ja-JP';
 // 各認識の継続的な結果を返すか、単一の認識結果だけを返すかを制御します。デフォルトは単一 (false) です。
 recognition.continuous = true;
-// SpeechRecognition インターフェイスの interimResults プロパティは interim の結果を返す (true) か返さない (false) か制御します。Interim の結果は最終的ではない結果になります (例えば SpeechRecognitionResult.isFinal プロパティは false となる)。
+// SpeechRecognition インターフェイスの interimResults プロパティは interim の結果を返す (true) か返さない (false) か制御します。
 recognition.interimResults = true;
 
 var app = new Vue({
@@ -47,9 +47,4 @@ recognition.onresult = function(event) {
 
 recognition.onaudioend = function() {
   app.message = '音声認識は終了しました。';
-  recognition.start();
-}
-
-recognition.onsoundend = function() {
-  console.log('音の検出は終わりました。');
 }

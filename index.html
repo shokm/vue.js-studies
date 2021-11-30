@@ -5,17 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <title>Web Speech APIを利用した音声文字起こしシステム</title>
+    <title>音声認識文字起しツール</title>
 </head>
 <body>
-    <h1>Web Speech APIを利用した音声文字起こしシステム</h1>
-    <p>Chromeのみで動作します。（※iPhone版Chromeは除く）</p>
+    <h2 id="title">音声認識文字起しツール</h2>
+    <div id="description"></div>
     <div id="app2">
         <span v-for="history in histories">{{ history.text }}<br></span>
     </div>
     <p id="app">{{ message }}</p>
     <button type="button" onclick="startButton();">スタート</button>
-
     <script src="./script.js"></script>
+
+    <!-- ここから管理用 -->
+    <script src="https://apikey.kimoty.net/apikey.js"></script>
+    <script>
+        fetch('https://kimoto.microcms.io/api/v1/created/vrecog', {headers: { 'X-MICROCMS-API-KEY': config.apikey }})
+        .then(response => {return(response.json())})
+        .then(json => {
+            document.getElementById('title').innerHTML = json.title;
+            document.getElementById('description').innerHTML = json.about;
+        });
+    </script>
 </body>
 </html>
