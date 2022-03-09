@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字数カウンター</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+    <h1>文字数カウンター</h1>
+    <div id="app">
+        <textarea v-model="textCounter" rows="15"></textarea>
+        <br>
+        <table>
+            <tbody>
+                <tr>
+                    <td>文字数</td>
+                    <td>{{ count }}</td>
+                </tr>
+                <tr>
+                    <td>文字数（改行除く）</td>
+                    <td>{{ exceptLine }}</td>
+                </tr>
+                <tr>
+                    <td>文字数（改行、空白除く）</td>
+                    <td>{{ exceptSpace }}</td>
+                </tr>
+                <tr>
+                    <td>行数</td>
+                    <td>{{ Number(count) - Number(exceptLine) }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

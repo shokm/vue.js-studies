@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <title>音声認識文字起こしツール</title>
+</head>
+<body>
+    <h1>音声認識文字起こしツール</h1>
+    <p>
+        Web Speech APIを利用しています。<br>
+        Chromeのみで動作します。（※iPhone版Chromeは除く）
+    </p>
+    <div id="app2">
+        <span v-for="history in histories">{{ history.text }}<br></span>
+    </div>
+    <p id="app">{{ message }}</p>
+    <button type="button" onclick="startButton();">スタート</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
