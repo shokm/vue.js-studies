@@ -22,6 +22,13 @@ let a = new Vue({
             const array = [];
             array.push(...result);
             return array.length;
+        },
+        lines() {
+            let result = 0;
+            if (Number(this.count) !== 0) {
+                result += Number(this.count) - Number(this.exceptLine) + 1;
+            }
+            return result;
         }
     }
 })
