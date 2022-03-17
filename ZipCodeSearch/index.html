@@ -2,17 +2,15 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>文字数カウンター</title>
+    <title>郵便番号から住所を表示</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
 </head>
 <body>
-    <h1>郵便番号から住所表示</h1>
+    <h1>郵便番号から住所を表示</h1>
     <div id="app">
-        <input type="text" v-model="zipCode">
-        <p>{{ pref }}</p>
-        <button @click="getAddress()">住所表示</button>
+        <input type="text" v-model="zipCode" placeholder="郵便番号を入力" width="80">
+        <p>{{ pref }} {{ city }} {{ town }}</p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
