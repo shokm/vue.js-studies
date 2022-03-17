@@ -23,13 +23,13 @@ const app = new Vue({
             if (len === 7 && check.test(newValue)) {
                 this.getAddress();
             } else if (check.test(newValue) == false) {
-                this.pref = '半角数字で入力してください'
-                this.city = ''
-                this.town = ''
+                this.pref = '半角数字で入力してください';
+                this.city = '';
+                this.town = '';
             } else {
-                this.pref = ''
-                this.city = ''
-                this.town = ''
+                this.pref = '';
+                this.city = '';
+                this.town = '';
             }
         }
     },
@@ -41,16 +41,16 @@ const app = new Vue({
                 }
             })
             .then(response => { 
-                // console.log(response.data.data)
-                this.pref = response.data.data.pref
-                this.city = response.data.data.city
-                this.town = response.data.data.town
+                // console.log(response.data.data);
+                this.pref = response.data.data.pref;
+                this.city = response.data.data.city;
+                this.town = response.data.data.town;
             })
             .catch(() => {
-                this.pref = '見つかりませんでした'
-                this.city = ''
-                this.town = ''
+                this.pref = '見つかりませんでした';
+                this.city = '';
+                this.town = '';
             });
         }
     } 
-})
+});
